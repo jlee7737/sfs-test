@@ -17,3 +17,7 @@ jobs:
         id: test_script
         run: |
           bash -n script.sh
+
+      - name: run script
+        run: |
+          bash script.sh
