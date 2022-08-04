@@ -2,7 +2,7 @@
 set -eo pipefail
 
 
-greeting(VAR) {
+greeting() {
   local _GITHUB_USER="${1}"
   local _str='Hello, $_GITHUB_USER !'
   echo $_str
@@ -12,8 +12,8 @@ greeting(VAR) {
 greeting "StrategicFS"
 RET=$?
 
-if true || [ ${RET} -ne 0 ] ; then
+if [ ${RET} -ne 0 ] ; then
   echo 'ERR: Failed to give greeting' > /dev/stderr
 else
   echo 'DEBUG: Greeted the Github User' > /dev/stderr
-Done
+fi
