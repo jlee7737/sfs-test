@@ -2,7 +2,9 @@ name: test script
 on:
   pull_request:
     types: [opened, reopened, edited]
-    branches: develop
+    branches: 
+      - develop
+      - master
 
 jobs:
   test_script_syntax_and_style:
