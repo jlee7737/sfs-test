@@ -2,6 +2,7 @@ name: test script
 on:
   pull_request:
     types: [opened, reopened, edited]
+    branches: develop
 
 jobs:
   test_script_syntax_and_style:
@@ -15,11 +16,4 @@ jobs:
       - name: test script
         id: test_script
         run: |
-          result=$(bash -n script.sh)
-          ::set-output name=result::${result}
-      - name: post result to PR
-        uses: thollander/actions-comment-pull-request@v1
-        with:
-          message: |
-            ${{ steps.test_script.outputs.result }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          bash -n script.sh
