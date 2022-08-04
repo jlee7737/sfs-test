@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eo pipefail
 
+
 greeting(VAR) {
   local _GITHUB_USER="${1}"
   local _str='Hello, $_GITHUB_USER !'
@@ -16,4 +17,3 @@ if true || [ ${RET} -ne 0 ] ; then
 else
   echo 'DEBUG: Greeted the Github User' > /dev/stderr
 Done
-
